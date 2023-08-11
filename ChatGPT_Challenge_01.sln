@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPT_Challenge_01", "ChatGPT_Challenge_01\ChatGPT_Challenge_01.csproj", "{70984B7C-894B-4FEF-9197-7854DBA08DD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatGPT_Challenge_01", "ChatGPT_Challenge_01\ChatGPT_Challenge_01.csproj", "{70984B7C-894B-4FEF-9197-7854DBA08DD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPT_Challenge_01.Data", "ChatGPT_Challenge_01.Data\ChatGPT_Challenge_01.Data.csproj", "{45111BFE-B489-4036-8E5D-031881B7CAA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPT_Challenge_01.Model", "ChatGPT_Challenge_01.Model\ChatGPT_Challenge_01.Model.csproj", "{2EFAABEA-D5BC-4BC1-8AAF-1A7250D396ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatGPT_Challenge_01.Services", "ChatGPT_Challenge_01.Services\ChatGPT_Challenge_01.Services.csproj", "{AE9F74FA-6FFD-425C-BAF1-4E93CFA7D41D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{70984B7C-894B-4FEF-9197-7854DBA08DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70984B7C-894B-4FEF-9197-7854DBA08DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70984B7C-894B-4FEF-9197-7854DBA08DD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45111BFE-B489-4036-8E5D-031881B7CAA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45111BFE-B489-4036-8E5D-031881B7CAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45111BFE-B489-4036-8E5D-031881B7CAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45111BFE-B489-4036-8E5D-031881B7CAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFAABEA-D5BC-4BC1-8AAF-1A7250D396ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFAABEA-D5BC-4BC1-8AAF-1A7250D396ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFAABEA-D5BC-4BC1-8AAF-1A7250D396ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFAABEA-D5BC-4BC1-8AAF-1A7250D396ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE9F74FA-6FFD-425C-BAF1-4E93CFA7D41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE9F74FA-6FFD-425C-BAF1-4E93CFA7D41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE9F74FA-6FFD-425C-BAF1-4E93CFA7D41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE9F74FA-6FFD-425C-BAF1-4E93CFA7D41D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

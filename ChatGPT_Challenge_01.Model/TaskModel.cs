@@ -1,6 +1,6 @@
-﻿namespace ChatGPT_Challenge_01.ReadModels
+﻿namespace ChatGPT_Challenge_01.Model
 {
-    public class TaskRm
+    public class TaskModel
     {
         public Guid Id { get; set; }
         public string? Title { get; set; }
