@@ -22,6 +22,9 @@
     "useDefineForClassFields": false,
     "strictPropertyInitialization": false
   },
+  "files": [
+    "node_modules/guid-typescript/src/guid.ts"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
