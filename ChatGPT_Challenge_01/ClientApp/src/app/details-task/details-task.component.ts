@@ -26,7 +26,18 @@ export class DetailsTaskComponent implements OnInit {
     this.Id = Id ?? 'not passed';
 
     this.apiService.getTaskById(this.Id)
-                    .subscribe((response) => this.task$ = response);
+                    .subscribe((response) => this.task$ = response, this.handleError);
+  }
+
+  private handleError(err: any) {
+
+    if (err.status == 404) {
+      alert("Task not found!")
+    }
+
+    console.log("Response Error. Status: ", err.status)
+    console.log("Response Error. Status Text: ", err.statusText)
+    console.log(err)
   }
 
 }

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Task } from '../model/task';
 import { ApiService } from '../services/api.service';
-import { Guid } from "guid-typescript";
 
 @Component({
   selector: 'app-search-tasks',
@@ -10,11 +7,11 @@ import { Guid } from "guid-typescript";
   styleUrls: ['./search-tasks.component.css']
 })
 export class SearchTasksComponent {
-  listTask$ = this.apiService.getListTasks();
 
   constructor(private apiService: ApiService) {
   }
 
+  listTask$ = this.apiService.getListTasks();
 }
 
 //export class Example {
