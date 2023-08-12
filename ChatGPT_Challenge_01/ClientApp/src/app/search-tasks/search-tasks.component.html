@@ -1,1 +1,44 @@
-<p>search-tasks works!</p>
+<ng-container *ngIf="listTask$ | async as listTask">
+
+  <p>tasks-list works!</p>
+
+  <table class="table table-bordered table-striped mb-0">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">DueDate</th>
+        <th scope="col">Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of listTask">
+        <th scope="row">
+          <button id="root" type="button" class="btn btn-outline-primary"
+                  (click)="getTaskById(task.id)">
+            {{task.id }}
+          </button>
+        </th>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.dueDate}}</td>
+        <td>{{task.completed}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card text-left" *ngIf="task$ | async as task">
+    <div class="card-header">  </div>
+    <div class="card-block">
+      <h4 class="card-title">Title : {{task.title}}</h4>
+      <p class="card-text">
+        LastName : {{task.description}}<br />
+        hireDate: {{task.dueDate}}<br />
+        enrollmentDate: {{task.completed}}
+      </p>
+    </div>
+  </div>
+
+</ng-container>
+

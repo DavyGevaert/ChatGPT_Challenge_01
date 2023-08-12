@@ -25,6 +25,7 @@
     "@angular/router": "^15.2.6",
     "@fortawesome/fontawesome-free": "^6.4.2",
     "bootstrap": "^5.2.3",
+    "guid-typescript": "^1.0.9",
     "jquery": "^3.6.3",
     "oidc-client": "^1.11.5",
     "popper.js": "^1.16.0",

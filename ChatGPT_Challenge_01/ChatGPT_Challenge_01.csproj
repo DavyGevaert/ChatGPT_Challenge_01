@@ -23,8 +23,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\model\task.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ChatGPT_Challenge_01.Model\ChatGPT_Challenge_01.Model.csproj" />
     <ProjectReference Include="..\ChatGPT_Challenge_01.Services\ChatGPT_Challenge_01.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\model\task.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
