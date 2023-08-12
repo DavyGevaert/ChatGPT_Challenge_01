@@ -1,4 +1,6 @@
 import { Guid } from "guid-typescript";
+// ClientApp Terminal run
+// npm i guid-typescript --save
 
 
 export interface Task {
