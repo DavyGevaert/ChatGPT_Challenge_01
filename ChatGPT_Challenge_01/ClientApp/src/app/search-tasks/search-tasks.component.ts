@@ -12,13 +12,7 @@ import { Guid } from "guid-typescript";
 export class SearchTasksComponent {
   listTask$ = this.apiService.getListTasks();
 
-  task$ = new Observable<Task>;
-
   constructor(private apiService: ApiService) {
-  }
-
-  getTaskById(id: Guid) {
-    this.task$ = this.apiService.getTaskById(id);
   }
 
 }

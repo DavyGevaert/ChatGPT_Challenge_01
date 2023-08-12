@@ -15,7 +15,8 @@ export class ApiService {
     return this.httpClient.get<Task[]>('https://localhost:7025/api/Tasks')
   }
 
-  public getTaskById(id: Guid): Observable<Task> {
+  // id is string in JavaScript json
+  public getTaskById(id: string): Observable<Task> {
     return this.httpClient.get<Task>('https://localhost:7025/api/Tasks/' + id)
   }
 }
