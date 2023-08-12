@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+
+  <div class="container d-grid gap-3" style="max-width: 700px;">
+
+    <div class="d-grid gap-3">
+
+      <span>Id example: ea264dc2-c323-4982-80c9-970120f75123</span>
+
+      <div class="form-floating">
+
+        <input formControlName="id" placeholder="Id" class="form-control" type="text" />
+        <label for="id">Id</label>
+
+      </div>
+
+      <div class="form-floating">
+
+        <input formControlName="title" placeholder="Title" class="form-control" type="text" />
+        <label for="title">Title</label>
+
+      </div>
+
+      <div class="form-floating">
+
+        <input formControlName="description" placeholder="Description" class="form-control" type="text" />
+        <label for="description">Description</label>
+
+      </div>
+
+      <span>Date example: 2023-08-12T19:23:51.766Z</span>
+
+      <div class="form-floating">
+
+        <input formControlName="dueDate" placeholder="DueDate" class="form-control" type="datetime" />
+        <label for="dueDate">DueDate</label>
+
+      </div>
+
+      <span>Date example: 2023-08-12T19:23:51.766Z</span>
+
+      <div class="form-floating">
+
+        <input formControlName="completed" placeholder="Completed" class="form-control" type="datetime" />
+        <label for="completed">Completed</label>
+
+      </div>
+
+      <div class="d-flex justify-content-center center">
+        <button (click)="postTask()" type="submit" class="btn btn-primary">Create <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+      </div>
+
+
+
+    </div>
+  </div>
+</form>
+
+

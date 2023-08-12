@@ -47,6 +47,9 @@ namespace ChatGPT_Challenge_01.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
         public IActionResult Create(TaskModel task)
         {
             var createdTask = _taskService.Create(task);

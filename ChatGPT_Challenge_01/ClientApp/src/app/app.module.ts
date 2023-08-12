@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SearchTasksComponent } from './search-tasks/search-tasks.component';
 import { DetailsTaskComponent } from './details-task/details-task.component';
+import { CreateTaskComponent } from './create-task/create-task.component';
 
 @NgModule({
   declarations: [
@@ -15,15 +16,18 @@ import { DetailsTaskComponent } from './details-task/details-task.component';
     NavMenuComponent,
     SearchTasksComponent,
     DetailsTaskComponent,
+    CreateTaskComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: SearchTasksComponent, pathMatch: 'full' },
       { path: 'search-tasks', component: SearchTasksComponent },
       { path: 'details-task/:Id', component: DetailsTaskComponent },
+      { path: 'create-task', component: CreateTaskComponent },
     ])
   ],
   providers: [],

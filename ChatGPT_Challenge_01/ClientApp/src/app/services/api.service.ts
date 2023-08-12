@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from '../model/task'
 
@@ -17,5 +17,9 @@ export class ApiService {
   // id is string in JavaScript json
   public getTaskById(id: string): Observable<Task> {
     return this.httpClient.get<Task>('https://localhost:7025/api/Tasks/' + id)
+  }
+
+  public createTask(task: Task): Observable<Task> {
+    return this.httpClient.post<Task>('https://localhost:7025/api/Tasks/', task)
   }
 }

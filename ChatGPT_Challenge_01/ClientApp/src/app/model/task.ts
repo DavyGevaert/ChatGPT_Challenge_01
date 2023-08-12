@@ -1,10 +1,7 @@
 import { Guid } from "guid-typescript";
-// ClientApp Terminal run
-// npm i guid-typescript --save
-
 
 export interface Task {
-  id?: Guid;
+  id?: string;  // Guid is a string inside JavaScript json notation
   title?: string;
   description?: string;
   dueDate?: Date;
