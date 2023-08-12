@@ -229,6 +229,3 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
-
-# don't upload cache
-.angular
