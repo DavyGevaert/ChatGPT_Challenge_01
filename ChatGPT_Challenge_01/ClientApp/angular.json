@@ -136,7 +136,7 @@
   "defaultProject": "ChatGPT_Challenge_01",
   "cli": {
     "cache": {
-      "enabled": true
+      "enabled": false
     }
   }
 }
