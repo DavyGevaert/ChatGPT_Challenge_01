@@ -22,8 +22,8 @@
         </th>
         <td>{{task.title}}</td>
         <td>{{task.description}}</td>
-        <td>{{task.dueDate}}</td>
-        <td>{{task.completed}}</td>
+        <td>{{task.dueDate | date:'shortTime'}}</td>
+        <td>{{task.completed | date:'shortTime'}}</td>
       </tr>
     </tbody>
   </table>
@@ -33,9 +33,9 @@
     <div class="card-block">
       <h4 class="card-title">Title : {{task.title}}</h4>
       <p class="card-text">
-        LastName : {{task.description}}<br />
-        hireDate: {{task.dueDate}}<br />
-        enrollmentDate: {{task.completed}}
+        Description : {{task.description}}<br />
+        DueDate: {{task.dueDate | date:'shortTime'}}<br />
+        Completed: {{task.completed | date:'shortTime'}}
       </p>
     </div>
   </div>

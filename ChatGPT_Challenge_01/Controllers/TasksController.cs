@@ -13,7 +13,6 @@ namespace ChatGPT_Challenge_01.Controllers
     {
         private readonly ILogger<TasksController> _logger;
         private readonly ITaskService _taskService;
-        private static Random random = new Random();
 
         public TasksController(ILogger<TasksController> logger, ITaskService taskService)
         {
