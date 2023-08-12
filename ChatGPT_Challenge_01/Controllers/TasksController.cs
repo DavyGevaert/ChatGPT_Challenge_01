@@ -19,14 +19,27 @@ namespace ChatGPT_Challenge_01.Controllers
             _taskService = taskService;
         }
 
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        [ProducesResponseType(typeof(TaskModel), 200)]
         public IActionResult Get(Guid id)
         {
             var task = _taskService.Get(id);
+
+            if (task == null)
+            {
+                return NotFound();
+            }
+
             return Ok(task);
         }
 
         [HttpGet]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        [ProducesResponseType(typeof(IList<TaskModel>), 200)]
         public IActionResult Find()
         {
             var tasks = _taskService.Find();

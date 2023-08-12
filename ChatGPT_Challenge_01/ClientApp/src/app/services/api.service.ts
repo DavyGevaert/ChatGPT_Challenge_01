@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from '../model/task'
-import { Guid } from "guid-typescript";
 
 @Injectable({
   providedIn: 'root'

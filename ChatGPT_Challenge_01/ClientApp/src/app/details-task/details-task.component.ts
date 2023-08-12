@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
-import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router'
 import { ApiService } from '../services/api.service';
+import { Task } from '../model/task';
 
 
 @Component({
@@ -12,27 +12,32 @@ import { ApiService } from '../services/api.service';
 
 export class DetailsTaskComponent implements OnInit {
 
-  Id: string = 'not loaded';
-  task$: any;  
+  taskId: string = 'not loaded';
+  task: Task = {};
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private apiService: ApiService) {
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(p => this.findTask(p.get("Id")));
   }
 
-  private findTask = (Id: string | null) => {
-    this.Id = Id ?? 'not passed';
+  private findTask = (taskId: string | null) => {
+    this.taskId = taskId ?? 'not passed';
 
-    this.apiService.getTaskById(this.Id)
-                    .subscribe((response) => this.task$ = response, this.handleError);
+    this.apiService.getTaskById(this.taskId)
+      .subscribe((response) => this.task = response,
+        this.handleError);
   }
 
-  private handleError(err: any) {
+  private handleError = (err: any) => {
 
-    if (err.status == 404) {
+    if (err.status == 400) {
       alert("Task not found!")
+      // return to homepage if task is not found
+      this.router.navigate(['/search-tasks'])
     }
 
     console.log("Response Error. Status: ", err.status)
