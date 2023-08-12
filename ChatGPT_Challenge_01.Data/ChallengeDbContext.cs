@@ -19,12 +19,6 @@ namespace ChatGPT_Challenge_01.Data
 
         public DbSet<TaskModel> Tasks { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseInMemoryDatabase("ChallengeManager");
-        }
-
         public void Seed()
         {
             if (!this.Database.IsInMemory())

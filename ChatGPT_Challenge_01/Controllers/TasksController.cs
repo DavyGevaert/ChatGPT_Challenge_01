@@ -1,5 +1,4 @@
 ﻿using ChatGPT_Challenge_01.Model;
-using ChatGPT_Challenge_01.ReadModels;
 using ChatGPT_Challenge_01.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using System;
