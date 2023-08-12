@@ -2,43 +2,79 @@
 
   <p>tasks-list works!</p>
 
-  <table class="table table-bordered table-striped mb-0">
-    <thead>
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">DueDate</th>
-        <th scope="col">Completed</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let task of listTask">
-        <th scope="row">
-          <button id="root" type="button" class="btn btn-outline-primary"
-                  (click)="getTaskById(task.id)">
-            {{task.id }}
-          </button>
-        </th>
-        <td>{{task.title}}</td>
-        <td>{{task.description}}</td>
-        <td>{{task.dueDate | date:'shortTime'}}</td>
-        <td>{{task.completed | date:'shortTime'}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div *ngFor="let task of listTask">
+    <div class="card text-dark mt-5 text-center">
+      <div class="card-body" style="padding: 20px; background-color:#e5ecf26e">
 
-  <div class="card text-left" *ngIf="task$ | async as task">
-    <div class="card-header">  </div>
-    <div class="card-block">
-      <h4 class="card-title">Title : {{task.title}}</h4>
-      <p class="card-text">
-        Description : {{task.description}}<br />
-        DueDate: {{task.dueDate | date:'shortTime'}}<br />
-        Completed: {{task.completed | date:'shortTime'}}
-      </p>
+        <h6 class="card-title">{{task.title}}</h6>
+        <div class="card-title" style="color:#ff3939">
+          {{task.description}}
+        </div>
+
+          <div class="d-grid text-center g-2">
+            <div class="row">
+              <div class="col">
+
+                <div class="col m-3">
+                  <i class="text-primary fas fa-flag-checkered" style="font-size:20px;"></i>
+                </div>
+
+                <div class="col">
+                  <i class="fa-regular fa-clock"></i>
+                  {{task.dueDate | date:'shortTime'}}
+                </div>
+
+
+              </div>
+
+              <div class="col">
+                <div style="text-align:center">
+                  <br />
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="col m-3">
+                  <i class="text-primary fas fa-check" style="font-size:20px;"></i>
+                </div>
+
+                <div class="col">
+                  <i class="fa-regular fa-clock"></i>
+                  {{task.completed | date:'shortTime'}}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+
+                </div>
+
+                <div class="col" style="margin-left: 20px;">
+                  <a class="btn btn-secondary btn-lg mt-2">
+                    <i class="fas fa-ticket"></i>
+                    Details
+                  </a>
+                </div>
+
+                <div class="col">
+
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+      </div>
     </div>
   </div>
 
 </ng-container>
+
+
+
+
+
+
+
 

@@ -20,6 +20,7 @@ import { SearchTasksComponent } from './search-tasks/search-tasks.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: SearchTasksComponent, pathMatch: 'full' },
+      { path: 'search-tasks', component: SearchTasksComponent },
     ])
   ],
   providers: [],
