@@ -133,5 +133,10 @@
       }
     }
   },
-  "defaultProject": "ChatGPT_Challenge_01"
+  "defaultProject": "ChatGPT_Challenge_01",
+  "cli": {
+    "cache": {
+      "enabled": false
+    }
+  }
 }
