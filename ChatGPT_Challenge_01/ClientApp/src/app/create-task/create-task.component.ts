@@ -40,9 +40,22 @@ export class CreateTaskComponent {
 
     this.task.completed = !!(this.form.value.completed ?? false);
 
-    this.apiService.createTask(this.task).subscribe(_ => console.log("form posted to server"));
+    this.apiService.createTask(this.task).subscribe(_ => console.log("form posted to server"), this.handleError);
 
     // return to homepage after task is created
     this.router.navigate(['/search-tasks'])
+  }
+
+  private handleError = (err: any) => {
+
+    if (err.status == 400) {
+      alert("Task not created!")
+      // return to homepage if task is not created
+      this.router.navigate(['/search-tasks'])
+    } 
+
+    console.log("Response Error. Status: ", err.status)
+    console.log("Response Error. Status Text: ", err.statusText)
+    console.log(err)
   }
 }
