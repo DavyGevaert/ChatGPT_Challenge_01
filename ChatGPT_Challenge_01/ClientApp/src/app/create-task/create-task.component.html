@@ -27,20 +27,22 @@
 
       </div>
 
-      <span>Date example: 2023-08-12T19:23:51.766Z</span>
-
       <div class="form-floating">
 
-        <input formControlName="dueDate" placeholder="DueDate" class="form-control" type="datetime" />
+        <input formControlName="dueDate" value="2023-08-12T19:30"
+                min="2023-08-13T00:00"
+                max="2099-12-31T00:00"
+               placeholder="DueDate" class="form-control" type="datetime-local" />
         <label for="dueDate">DueDate</label>
 
       </div>
 
-      <span>Date example: 2023-08-12T19:23:51.766Z</span>
-
       <div class="form-floating">
 
-        <input formControlName="completed" placeholder="Completed" class="form-control" type="datetime" />
+        <input formControlName="completed" value="2018-08-13T19:30"
+                min="2023-08-13T00:00"
+                max="2099-12-31T00:00"
+               placeholder="Completed" class="form-control" type="datetime-local" />
         <label for="completed">Completed</label>
 
       </div>
