@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 import { ApiService } from '../services/api.service';
 import { Task } from '../model/task';
-import { FormBuilder } from '@angular/forms'
+import { FormBuilder, Validators } from '@angular/forms'
 
 
 @Component({
@@ -27,7 +27,7 @@ export class DetailsTaskComponent implements OnInit {
     title: [''],
     description: [''],
     dueDate: [''],
-    completed: ['']
+    completed: [null, Validators.required]
   })
 
   ngOnInit(): void {
@@ -66,7 +66,7 @@ export class DetailsTaskComponent implements OnInit {
     let dueDate = this.form.value.dueDate?.toString() + ':00';
     this.task.dueDate = new Date(dueDate);
 
-    this.task.completed = !!(this.form.value.completed ?? false);  // something is wrong here, as input boolean in edit screen is not accepted into web api
+    this.task.completed = !!(this.form.value.completed ?? false);
 
     this.apiService.editTask(this.taskId, this.task).subscribe(_ => console.log("form posted to server"));
 
