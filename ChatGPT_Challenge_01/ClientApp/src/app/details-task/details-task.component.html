@@ -1,10 +1,48 @@
-<div class="card text-left">
-  <div class="card-block">
-    <h4 class="card-title">Title : {{task.title}}</h4>
-    <p class="card-text">
-      Description : {{task.description}}<br />
-      DueDate: {{task.dueDate | date:'shortTime'}}<br />
-      Completed: {{task.completed}}
-    </p>
+<form [formGroup]="form">
+
+  <div class="container d-grid gap-3" style="max-width: 700px;">
+
+    <div class="d-grid gap-3">
+
+      <div class="form-floating">
+
+        <input formControlName="title" placeholder="Title" class="form-control" type="text" value="{{task.title}}" />
+        <label for="title">Title</label>
+
+      </div>
+
+      <div class="form-floating">
+
+        <input formControlName="description" placeholder="Description" class="form-control" type="text" value="{{task.description}}" />
+        <label for="description">Description</label>
+
+      </div>
+
+      <div class="form-floating">
+
+        <input formControlName="dueDate"  value="{{task.dueDate}}"
+               min="2023-08-13T00:00"
+               max="2099-12-31T00:00"
+               placeholder="DueDate" class="form-control" type="datetime-local" />
+        <label for="dueDate">DueDate</label>
+
+      </div>
+
+      <div class="form-floating">
+
+        <input formControlName="completed" placeholder="Completed" class="form-control" type="text" value="{{task.completed}}" />
+        <label for="completed">Completed</label>
+
+      </div>
+
+      <div class="d-flex justify-content-center center">
+        <button (click)="editTask()" type="button" class="btn btn-primary">Create <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+      </div>
+
+
+
+    </div>
   </div>
-</div>
+</form>
+
+
