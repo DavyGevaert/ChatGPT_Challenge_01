@@ -39,8 +39,17 @@
 
       <div class="form-floating">
 
-        <input formControlName="completed" placeholder="Completed" class="form-control" type="text" />
-        <label for="completed">Completed</label>
+        <br />
+        <input type="radio" name="completed" formControlName="completed" [value]="true" />
+        <label for="completed" style="margin-top: 6px;">&nbsp;&nbsp;&nbsp;Completed</label>
+
+      </div>
+
+      <div class="form-floating">
+
+        <br />
+        <input type="radio" name="completed" formControlName="completed" [value]="false" />
+        <label for="completed" style="margin-top: 6px;">&nbsp;&nbsp;&nbsp;Not completed</label>
 
       </div>
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { FormBuilder } from '@angular/forms'
+import { FormBuilder, Validators } from '@angular/forms'
 import { Task } from '../model/task';
 import { Router } from '@angular/router'
 
@@ -24,7 +24,7 @@ export class CreateTaskComponent {
     title: [''],
     description: [''],
     dueDate: [''],
-    completed: ['']
+    completed: [null, Validators.required]
   })
 
   postTask() {
