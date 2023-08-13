@@ -32,7 +32,7 @@ namespace ChatGPT_Challenge_01.Data
                 Title = "Wassen",
                 Description = "De was in de wasmachine doen",
                 DueDate = DateTime.Now.AddHours(random.Next(1, 15)),
-                Completed = DateTime.Now.AddHours(random.Next(15, 20))
+                Completed = true
             });
 
             Tasks.Add(new TaskModel
@@ -41,7 +41,7 @@ namespace ChatGPT_Challenge_01.Data
                 Title = "Strijken",
                 Description = "De gewaste was strijken op de strijkplank",
                 DueDate = DateTime.Now.AddHours(random.Next(1, 10)),
-                Completed = DateTime.Now.AddHours(random.Next(10, 15))
+                Completed = false
             });
 
             Tasks.Add(new TaskModel
@@ -50,7 +50,7 @@ namespace ChatGPT_Challenge_01.Data
                 Title = "Slapen",
                 Description = "1 of meerdere keren een dutje doen",
                 DueDate = DateTime.Now.AddHours(random.Next(1, 8)),
-                Completed = DateTime.Now.AddHours(random.Next(8, 10))
+                Completed = false
             });
 
             Tasks.Add(new TaskModel
@@ -59,7 +59,7 @@ namespace ChatGPT_Challenge_01.Data
                 Title = "Surfen op het Internet",
                 Description = "Het Internet gebruiken en lezen wat je wenst",
                 DueDate = DateTime.Now.AddHours(random.Next(1, 3)),
-                Completed = DateTime.Now.AddHours(random.Next(3, 5))
+                Completed = false
             });
 
             Tasks.Add(new TaskModel
@@ -68,7 +68,7 @@ namespace ChatGPT_Challenge_01.Data
                 Title = "Autorijden",
                 Description = "Plankgas geven maar niet met een zware voet",
                 DueDate = DateTime.Now.AddHours(random.Next(1, 15)),
-                Completed = DateTime.Now.AddHours(random.Next(15, 20))
+                Completed = true
             });
 
             this.SaveChanges();

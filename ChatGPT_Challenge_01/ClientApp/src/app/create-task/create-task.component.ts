@@ -38,9 +38,7 @@ export class CreateTaskComponent {
     let dueDate = this.form.value.dueDate?.toString() + ':00';
     this.task.dueDate = new Date(dueDate);
 
-    // add default minutes part
-    let completed = this.form.value.completed?.toString() + ':00';
-    this.task.completed = new Date(completed);
+    this.task.completed = !!(this.form.value.completed ?? false);
 
     this.apiService.createTask(this.task).subscribe(_ => console.log("form posted to server"));
 
