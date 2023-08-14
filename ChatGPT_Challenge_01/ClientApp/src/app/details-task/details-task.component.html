@@ -20,7 +20,7 @@
 
       <div class="form-floating">
 
-        <input formControlName="dueDate"  value="{{task.dueDate}}"
+        <input formControlName="dueDate" value="{{task.dueDate}}"
                min="2023-08-13T00:00"
                max="2099-12-31T00:00"
                placeholder="DueDate" class="form-control" type="datetime-local" />
@@ -45,7 +45,11 @@
       </div>
 
       <div class="d-flex justify-content-center center">
-        <button (click)="editTask()" type="button" class="btn btn-primary">Edit <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+        <button (click)="editTask()" type="button" class="btn btn-primary">Edit task<i class="fa fa-sign-in" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="d-flex justify-content-center center">
+        <button (click)="deleteTask()" type="button" class="btn btn-primary">Delete task<i class="fa fa-sign-in" aria-hidden="true"></i></button>
       </div>
 
 

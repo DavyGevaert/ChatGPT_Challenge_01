@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
 import { ApiService } from '../services/api.service';
 import { Task } from '../model/task';
 import { FormBuilder, Validators } from '@angular/forms'
@@ -17,7 +17,6 @@ export class DetailsTaskComponent implements OnInit {
   task: Task = {};
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
               private fb: FormBuilder,
               private apiService: ApiService) {
   }
@@ -47,7 +46,7 @@ export class DetailsTaskComponent implements OnInit {
     if (err.status == 400) {
       alert("Task not found!")
       // return to homepage if task is not found
-      this.router.navigate(['/search-tasks'])
+      window.location.href = "/search-tasks"
     }
 
     console.log("Response Error. Status: ", err.status)
@@ -71,7 +70,27 @@ export class DetailsTaskComponent implements OnInit {
     this.apiService.editTask(this.taskId, this.task).subscribe(_ => console.log("form posted to server"));
 
     // return to homepage after task is created
-    this.router.navigate(['/search-tasks'])
+    window.location.href = "/search-tasks"
+  }
+
+  deleteTask() {
+    console.log(this.taskId);
+    this.apiService.deleteTask(this.taskId)
+      .subscribe(_ => console.log("task succesfully deleted on web api"),
+        this.deleteTaskError);
+    window.location.href = "/search-tasks"
+  }
+
+  private deleteTaskError = (err: any) => {
+
+    if (err.status == 400) {
+      alert("Task was already deleted")
+      window.location.href = "/search-tasks"
+    } 
+
+    console.log("Response Error. Status: ", err.status)
+    console.log("Response Error. Status Text: ", err.statusText)
+    console.log(err)
   }
 
 }

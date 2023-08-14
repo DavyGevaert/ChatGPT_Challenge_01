@@ -9,7 +9,6 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SearchTasksComponent } from './search-tasks/search-tasks.component';
 import { DetailsTaskComponent } from './details-task/details-task.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
-import { DeleteTaskComponent } from './delete-task/delete-task.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
     SearchTasksComponent,
     DetailsTaskComponent,
     CreateTaskComponent,
-    DeleteTaskComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,7 +28,6 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
       { path: 'search-tasks', component: SearchTasksComponent },
       { path: 'details-task/:Id', component: DetailsTaskComponent },
       { path: 'create-task', component: CreateTaskComponent },
-      { path: 'delete-task', component: DeleteTaskComponent }
     ])
   ],
   providers: [],
