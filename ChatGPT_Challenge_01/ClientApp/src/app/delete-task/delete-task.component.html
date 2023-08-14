@@ -1,0 +1,34 @@
+<ng-container *ngIf="listTask$ | async as listTask">
+
+  <table class="table table-bordered table-striped mb-0">
+    <thead>
+      <tr>
+        <th scope="col">TaskId</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">DueDate</th>
+        <th scope="col">Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of listTask">
+        <th scope="row">
+          
+            
+            <button id="{{task.id}}" type="button" class="btn btn-outline-primary"
+                    (click)="deleteTask('{{task.id}}')">
+              {{task.id }}
+            </button>
+          
+          
+        </th>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.dueDate | date:'shortTime'}}</td>
+        <td>{{task.completed}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</ng-container>
+

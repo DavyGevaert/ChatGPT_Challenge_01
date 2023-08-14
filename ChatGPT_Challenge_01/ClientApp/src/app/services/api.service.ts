@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from '../model/task'
 
@@ -29,5 +29,10 @@ export class ApiService {
   // PUT
   public editTask(guid: string, task: Task): Observable<Task> {
     return this.httpClient.put<Task>('https://localhost:7025/api/Tasks/' + guid, task)
+  }
+
+  // DELETE BY ID
+  public deleteTask(guid: string): Observable<Task> {
+    return this.httpClient.delete<Task>('https://localhost:7025/api/Tasks/' + guid)
   }
 }
