@@ -1,17 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiService } from '../services/api.service';
+import { Task } from '../model/task'
 
 @Component({
   selector: 'app-search-tasks',
   templateUrl: './search-tasks.component.html',
   styleUrls: ['./search-tasks.component.css']
 })
-export class SearchTasksComponent {
+export class SearchTasksComponent implements OnInit {
+
+  public tasks$: Observable<Task[]>;
 
   constructor(private apiService: ApiService) {
   }
 
-  listTask$ = this.apiService.getListTasks();
+  ngOnInit() {
+    this.tasks$ = this.apiService.getListTasks();
+  }
 }
 
 //export class Example {

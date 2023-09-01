@@ -1,8 +1,8 @@
-<ng-container *ngIf="listTask$ | async as listTask">
+
 
   <p>tasks-list works!</p>
 
-  <div *ngFor="let task of listTask">
+  <div *ngFor="let task of tasks$ | async">
     <div class="card text-dark mt-5 text-center">
       <div class="card-body" style="padding: 20px; background-color:#e5ecf26e">
 
@@ -78,9 +78,6 @@
       </div>
     </div>
   </div>
-
-</ng-container>
-
 
 
 
