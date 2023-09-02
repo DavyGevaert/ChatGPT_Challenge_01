@@ -1,8 +1,10 @@
 
 
-  <p>tasks-list works!</p>
+<p>tasks-list works!</p>
 
-  <div *ngFor="let task of tasks$ | async">
+<div *ngIf="tasks$ | async as tasks; else loading">
+
+  <div *ngFor="let task of tasks">
     <div class="card text-dark mt-5 text-center">
       <div class="card-body" style="padding: 20px; background-color:#e5ecf26e">
 
@@ -11,74 +13,77 @@
           {{task.description}}
         </div>
 
-          <div class="d-grid text-center g-2">
+        <div class="d-grid text-center g-2">
+          <div class="row">
+            <div class="col">
+
+              <div class="col m-3">
+                <i class="text-primary fas fa-flag-checkered" style="font-size:20px;"></i>
+              </div>
+
+              <div class="col">
+                <i class="fa-regular fa-comment-dots">
+                </i> Begin taak
+              </div>
+
+              <div class="col">
+                <i class="fa-regular fa-clock"></i>
+                {{task.dueDate | date:'shortTime'}}
+              </div>
+
+
+            </div>
+
+            <div class="col">
+              <div style="text-align:center">
+                <br />
+                <i class="fas fa-spinner fa-spin"></i>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="col m-3">
+                <i class="text-primary fas fa-check" style="font-size:20px;"></i>
+              </div>
+
+              <div class="col">
+                <i class="fa-regular fa-comment-dots">
+                </i> Einde taak
+              </div>
+
+              <div class="col">
+                <i class="fa-regular fa-clock"></i>
+                Completed: {{task.completed}}
+              </div>
+            </div>
+
             <div class="row">
               <div class="col">
 
-                <div class="col m-3">
-                  <i class="text-primary fas fa-flag-checkered" style="font-size:20px;"></i>
-                </div>
+              </div>
 
-                <div class="col">
-                  <i class="fa-regular fa-comment-dots">
-                  </i> Begin taak
-                </div>
-
-                <div class="col">
-                  <i class="fa-regular fa-clock"></i>
-                  {{task.dueDate | date:'shortTime'}}
-                </div>
-
-
+              <div class="col" style="margin-left: 20px;">
+                <a [routerLink]="['/details-task', task.id]" class="btn btn-secondary btn-lg mt-2">
+                  <i class="fas fa-ticket"></i>
+                  Details
+                </a>
               </div>
 
               <div class="col">
-                <div style="text-align:center">
-                  <br />
-                  <i class="fas fa-spinner fa-spin"></i>
-                </div>
+
               </div>
-
-              <div class="col">
-                <div class="col m-3">
-                  <i class="text-primary fas fa-check" style="font-size:20px;"></i>
-                </div>
-
-                <div class="col">
-                  <i class="fa-regular fa-comment-dots">
-                  </i> Einde taak
-                </div>
-
-                <div class="col">
-                  <i class="fa-regular fa-clock"></i>
-                  Completed: {{task.completed}}
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col">
-
-                </div>
-
-                <div class="col" style="margin-left: 20px;">
-                  <a [routerLink]="['/details-task', task.id]" class="btn btn-secondary btn-lg mt-2">
-                    <i class="fas fa-ticket"></i>
-                    Details
-                  </a>
-                </div>
-
-                <div class="col">
-
-                </div>
-              </div>
-              
             </div>
+
           </div>
+        </div>
 
       </div>
     </div>
   </div>
 
+</div>
+
+<ng-template #loading>Even geduld, items worden geladen ...</ng-template>
 
 
 

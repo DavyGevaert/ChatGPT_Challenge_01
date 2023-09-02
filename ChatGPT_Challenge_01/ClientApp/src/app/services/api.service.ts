@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 import { Task } from '../model/task'
 
 @Injectable({
@@ -12,7 +12,7 @@ export class ApiService {
 
   // GET ALL
   public getListTasks(): Observable<Task[]> {
-    return this.httpClient.get<Task[]>('https://localhost:7025/api/Tasks')
+    return this.httpClient.get<Task[]>('https://localhost:7025/api/Tasks').pipe(delay(3000))
   }
 
   // GET BY ID
