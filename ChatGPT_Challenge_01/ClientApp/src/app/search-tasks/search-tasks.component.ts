@@ -16,6 +16,17 @@ export class SearchTasksComponent implements OnInit {
   }
 
   ngOnInit() {
+    // https://www.youtube.com/watch?v=DvnzeCfYg0s how to update list whenever a new Task is created
+    this.apiService.refreshNeeded$
+      .subscribe(() => {
+        this.getTasks();
+      });
+
+    // bootstrap call
+    this.tasks$ = this.apiService.getListTasks();
+  }
+
+  private getTasks() {
     this.tasks$ = this.apiService.getListTasks();
   }
 }

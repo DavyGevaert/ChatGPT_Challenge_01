@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { delay, Observable } from 'rxjs';
+import { delay, Observable, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Task } from '../model/task'
 
 @Injectable({
@@ -9,6 +10,12 @@ import { Task } from '../model/task'
 export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
+
+  private _refreshNeeded$ = new Subject<void>();
+
+  get refreshNeeded$() {
+    return this._refreshNeeded$;
+  }
 
   // GET ALL
   public getListTasks(): Observable<Task[]> {
@@ -23,7 +30,13 @@ export class ApiService {
 
   // POST
   public createTask(task: Task): Observable<Task> {
-    return this.httpClient.post<Task>('https://localhost:7025/api/Tasks/', task)
+    return this.httpClient
+      .post<Task>('https://localhost:7025/api/Tasks/', task)
+      .pipe(
+        tap(() => {
+          this._refreshNeeded$.next();
+        })
+      )
   }
 
   // PUT

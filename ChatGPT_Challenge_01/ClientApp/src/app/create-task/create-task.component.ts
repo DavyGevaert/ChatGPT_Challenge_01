@@ -40,7 +40,8 @@ export class CreateTaskComponent {
 
     this.task.completed = !!(this.form.value.completed ?? false);
 
-    this.apiService.createTask(this.task).subscribe(_ => console.log("form posted to server"), this.handleError);
+    this.apiService.createTask(this.task)
+      .subscribe(_ => console.log("form posted to server"), this.handleError);
 
     // return to homepage after task is created
     this.router.navigate(['/search-tasks'])
