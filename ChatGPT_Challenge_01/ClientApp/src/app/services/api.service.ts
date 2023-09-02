@@ -30,6 +30,8 @@ export class ApiService {
 
   // POST
   public createTask(task: Task): Observable<Task> {
+    // https://www.youtube.com/watch?v=DvnzeCfYg0s how to update list
+
     return this.httpClient
       .post<Task>('https://localhost:7025/api/Tasks/', task)
       .pipe(
