@@ -9,6 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SearchTasksComponent } from './search-tasks/search-tasks.component';
 import { DetailsTaskComponent } from './details-task/details-task.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
+import { CustomDatePipe } from './date/custom-date-pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
     SearchTasksComponent,
     DetailsTaskComponent,
     CreateTaskComponent,
+    CustomDatePipe,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
